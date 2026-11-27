@@ -4,11 +4,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Виджет выбора языка</title>
+    <link rel="stylesheet" href="vendor/ui-kit/tokens.css">
+    <link rel="stylesheet" href="vendor/ui-kit/button.css">
+    <link rel="stylesheet" href="vendor/ui-kit/tumbler.css">
+    <link rel="stylesheet" href="vendor/ui-kit/checkbox.css">
+    <link rel="stylesheet" href="vendor/ui-kit/arrow-button.css">
+    <link rel="stylesheet" href="vendor/ui-kit/close-button.css">
+    <link rel="stylesheet" href="vendor/ui-kit/back.css">
+    <link rel="stylesheet" href="vendor/ui-kit/toolbar.css">
+    <link rel="stylesheet" href="palette.css">
+    <link rel="stylesheet" href="fonts.css?v=20261127-15">
+    <link rel="stylesheet" href="style.css?v=20261127-19">
+    <link rel="stylesheet" href="vendor/ui-kit/tabs.css">
+    <link rel="stylesheet" href="vendor/ui-kit/property-editor.css">
+    <link rel="stylesheet" href="vendor/ui-kit/pg-editors.css">
+    <link rel="stylesheet" href="vendor/ui-kit/input.css">
+    <link rel="stylesheet" href="vendor/ui-kit/demo-frame.css">
+    <link rel="stylesheet" href="editors.css?v=20261127-19">
+    <script src="vendor/ui-kit/pg-editors.js?v=20261127-19" defer></script>
+    <script src="widget.js?v=20261127-20" defer></script>
   </head>
   <body>
-    <main>
-      <h1>Виджет выбора языка</h1>
-      <p>Тестовая страница публикации. Интерактивное демо появится на следующем этапе.</p>
-    </main>
+    <header class="heading"><h1><a href="http://axure.tensor.ru/StandardsV8/guidelines.html" target="_blank" rel="noopener"><img src="assets/imgUiBackText.svg" alt=""> Виджет "Выбор языка" <span>27.1100</span></a></h1>
+      <p>Основная веха 24.0000, доп. веха 24.0000 (мобилка, например)</p><p>Краткое описание компонента и его опций. Можно использовать ссылки и маркированные списки.</p></header>
+    <main class="layout"><div class="board">
+      <section class="tile design"><div id="editor"><div class="tools tb tb--style-info" aria-label="Инструменты виджета">
+        <button class="tb__btn" data-screen="appearance" title="Оформление" aria-label="Оформление"><span class="tb__icon glyph" data-symbol="&#xEBBB;">⚲</span></button><button class="tb__btn" data-screen="color" title="Цвет"><i class="swatch"></i></button>
+        <button class="tb__btn" data-screen="font" title="Шрифт" aria-label="Шрифт"><span class="tb__icon glyph" data-symbol="&#xEAC9;">T</span></button><button class="tb__btn" data-screen="size" title="Размер"><span class="tb__icon"><img src="assets/img1.svg" alt="Размер"></span></button>
+        <button class="tb__btn" data-screen="main" title="Настройки" aria-label="Настройки"><span class="tb__icon glyph" data-symbol="&#xE75D;">⚙</span></button><button class="tb__btn tb__btn--delete" id="remove" title="Удалить виджет" aria-label="Удалить виджет"><span class="tb__icon glyph" data-symbol="&#xEB72;">×</span></button><button class="tb__btn" data-screen="actions" title="Ещё" aria-label="Ещё"><span class="tb__icon glyph" data-symbol="&#xEAB4;">•••</span></button>
+      </div><div class="outline"><button class="trigger"></button></div></div><button id="restore" hidden>Восстановить виджет</button><h2>Design time</h2></section>
+      <section class="tile settings" aria-label="Настройки виджета"><div id="settings"></div><button id="reopen" hidden>Открыть настройки</button></section>
+      <section class="tile runtime"><h2>Run time</h2><h3>Минимальная высота (24 px — бесконечность)</h3><p>Минимальная ширина (24 px — бесконечность)</p><div class="outline"><button class="trigger"></button></div>
+        <h3>Демонстрация на ширине 200 px</h3><p>Минимальная ширина (24 px — бесконечность)</p><div class="outline fixed"><button class="trigger"></button></div></section>
+      <section class="tile demo"><h2>Demo</h2><button class="trigger"></button></section></div>
+      <aside><div class="devices"><button data-device="mobile"><img src="assets/imgIconDevice.svg" alt=""> МП</button><button data-device="web"><img src="assets/imgIconDevice1.svg" alt=""> Web</button></div>
+        <div class="sidegroup df-card" role="radiogroup" aria-label="Вид демо"><div class="radio-list df-options"><label class="view-radio df-radio"><input type="radio" name="demo-view" value="default" data-view="default" checked><span class="df-radio__box" aria-hidden="true"></span><span class="df-radio__text">Типовое представление</span></label><label class="view-radio df-radio"><input type="radio" name="demo-view" value="store" data-view="store"><span class="df-radio__box" aria-hidden="true"></span><span class="df-radio__text">Превью в магазине</span></label></div><small class="df-group">НАСТРОЙКИ</small><div class="radio-list df-options"><label class="view-radio df-radio"><input type="radio" name="demo-view" value="appearance" data-view="appearance"><span class="df-radio__box" aria-hidden="true"></span><span class="df-radio__text">Свойство Стиль</span></label><label class="view-radio df-radio"><input type="radio" name="demo-view" value="size" data-view="size"><span class="df-radio__box" aria-hidden="true"></span><span class="df-radio__text">Свойство Размер</span></label></div></div>
+        <div class="sidegroup note"><div class="review-status">Итерации с директором</div><p>Что согласовываем.<br>Описание и тонкости элементов.</p><p><img src="assets/imgProperty1Default.svg" alt=""> Мазилова Екатерина<br><u>Согласование макета</u><br><u>Описание БП</u></p><p><img src="assets/imgStreamlineWeb.svg" alt=""> Фамилия Имя<br><u>Разработка виджета</u></p></div></aside></main>
+    <div id="property-popup" popover="auto" role="dialog"></div>
+    <dialog id="picker" aria-label="Выбор языка"></dialog><dialog id="notice"><span class="notice-art" aria-hidden="true"></span><h3></h3><p>Мы еще не перевели СБИС на этот язык, но планируем это сделать.</p><button class="btn btn--outlined btn--style-primary btn--size-m"><span class="btn__caption">Буду ждать</span></button></dialog>
   </body>
 </html>

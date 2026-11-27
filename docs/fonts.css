@@ -1,0 +1,14 @@
+@font-face{font-family:Inter;src:url("fonts/Inter-Regular-hint.ttf") format("truetype");font-weight:400;font-style:normal}
+@font-face{font-family:Inter;src:url("fonts/Inter-Italic-hint.ttf") format("truetype");font-style:italic;font-weight:400}
+@font-face{font-family:Inter;src:url("fonts/Inter-Medium-hint.ttf") format("truetype");font-weight:500;font-style:normal}
+@font-face{font-family:Inter;src:url("fonts/Inter-MediumItalic-hint.ttf") format("truetype");font-weight:500;font-style:italic}
+@font-face{font-family:Inter;src:url("fonts/Inter-SemiBold-hint.ttf") format("truetype");font-weight:600;font-style:normal}
+@font-face{font-family:Inter;src:url("fonts/Inter-SemiBoldItalic-hint.ttf") format("truetype");font-weight:600;font-style:italic}
+@font-face{font-family:WidgetIcons;src:local("cbuc-icons24 Regular"),local("cbuc-icons24")}
+@font-face{font-family:WidgetIconsSmall;src:local("cbuc-icons Regular"),local("cbuc-icons")}
+@font-face{font-family:cbuc-icons;src:local("cbuc-icons Regular"),local("cbuc-icons")}
+@font-face{font-family:cbuc-icons24;src:local("cbuc-icons24 Regular"),local("cbuc-icons24")}
+@font-face{font-family:WidgetAccordion;src:local("Accordion-Font")}
+@font-face{font-family:WidgetAccordion20;src:local("Accordion-Font-20")}
+.has-icons .glyph{font-size:0}
+.has-icons .glyph::before{content:attr(data-symbol);font:24px/1 WidgetIcons;vertical-align:middle}
